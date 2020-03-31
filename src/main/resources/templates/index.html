@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <title>Neduet</title>
     <meta charset="UTF-8">
@@ -9,49 +9,14 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script>
-   $(document).ready(function(){
-      var i=1;
-     $("#add_row").click(function(){
-      $('#addr'+i).html("<td><input name='competitionTitle"+i+"' type='text'  class='form-control input-md'  /> </td><td><input  name='eventParticipated"+i+"' type='text'  class='form-control input-md'></td><td><input  name='organizingBody"+i+"' type='text' class='form-control input-md'></td>"+
-      "<td><input name='country"+i+"' type='text'  class='form-control input-md'  /> </td><td><input name='team"+i+"' type='text'  class='form-control input-md'  /> </td><td><input name='date"+i+"' type='text'  class='form-control input-md'  /> </td><td><input name='award"+i+"' type='text'  class='form-control input-md'  /> </td>");
 
-      $('#table1').append('<tr id="addr'+(i+1)+'"></tr>');
-      i++;
-  });
-   $("#delete_row").click(function(){
-    	 if(i>1){
-		 $("#addr"+(i-1)).html('');
-		 i--;
-		 }
-	 });
-var j=1;
-     $("#add_row_t2").click(function(){
-      $('#add'+j).html("<td><input name='universityVisited"+j+"' type='text'  class='form-control input-md'  /> </td><td><input  name='programmeAttended"+j+"' type='text'  class='form-control input-md'></td><td><input  name='city"+j+"' type='text' class='form-control input-md'></td>"+
-      "<td><input name='countryt2"+j+"' type='text'  class='form-control input-md'  /> </td><td><input name='duration"+j+"' type='text'  class='form-control input-md'  /> </td><td><input name='stdate"+j+"' type='text'  class='form-control input-md'  /> </td><");
-
-      $('#tab_logic').append('<tr id="addr'+(j+1)+'"></tr>');
-      j++;
-  });
-   $("#delete_row_t2").click(function(){
-    	 if(j>1){
-		 $("#add"+(j-1)).html('');
-		 j--;
-		 }
-	 });
-
-});
-    </script>
-    <style>
-
-
-    </style>
+    <script type="application/javascript" th:src="@{js/dynamicTable.js}"></script>
 </head>
 <body>
 
 <div class="container">
 
-    <form>
+    <form  id="customerForm">
         <h3>BASIC INFORMATION</h3>
         <div class="form-group">
             <label for="fullName">Full Name</label>
@@ -85,60 +50,30 @@ var j=1;
         <table class="table table-bordered table-hover" id="table1">
             <thead>
             <tr >
-                <th class="text-center">
-                    Competition Title
-                </th>
-                <th class="text-center">
-                    Event Participated in (eg: Circuit Design etc.)
-                </th>
-                <th class="text-center">
-                    Organizing Body or University
-                </th>
-                <th class="text-center">
-                    Country
-                </th>
-                <th class="text-center">
-                    Names of all team Members for example (Ms. Tania Kareem, Automotive Engineering
-                    Mr. Bahram Honory, Chemical Engineering etc.)
-                </th>
-                <th class="text-center">
-                    Event Date (MMM-YYYY)
-                    (eg. Aug-2019)
-                </th>
-                <th class="text-center">
-                    Award/Position Won
-                </th>
+                <th>Select</th>
+                <th class="text-center">Competition Title</th>
+                <th class="text-center">Event Participated in (eg: Circuit Design etc.)</th>
+                <th class="text-center">Organizing Body or University</th>
+                <th class="text-center">Country</th>
+                <th class="text-center">Names of all team Members for example (Ms. Tania Kareem, Automotive Engineering Mr. Bahram Honory, Chemical Engineering etc.)</th>
+                <th class="text-center">Event Date (MMM-YYYY) (eg. Aug-2019)</th>
+                <th class="text-center">Award/Position Won</th>
             </tr>
             </thead>
             <tbody>
-            <tr id='addr0'>
-                <td>
-                    <input type="text" name='competitionTitle'  class="form-control"/>
-                </td>
-                <td>
-                    <input type="text" name='eventParticipated'  class="form-control"/>
-                </td>
-                <td>
-                    <input type="text" name='organizingBody'  class="form-control"/>
-                </td>
-                <td>
-                    <input type="text" name='country'  class="form-control"/>
-                </td>
-                <td>
-                    <input type="text" name='team'  class="form-control"/>
-                </td>
-                <td>
-                    <input type="text" name='date'  class="form-control"/>
-                </td>
-                <td>
-                    <input type="text" name='award'  class="form-control"/>
-                </td>
+            <tr>
+                <td><input type='checkbox' name='chk' disabled/></td>
+                <td><input type="text" class="form-control"/></td>
+                <td><input type="text" class="form-control"/></td>
+                <td><input type="text" class="form-control"/></td>
+                <td><input type="text" class="form-control"/></td>
+                <td><input type="text" class="form-control"/></td>
+                <td><input type="text" class="form-control"/></td>
+                <td><input type="text" class="form-control"/></td>
             </tr>
-            <tr id='addr1'></tr>
             </tbody>
         </table>
-        <a id="add_row" class="btn btn-default pull-left">Add Row</a><a id='delete_row' class="pull-right btn btn-default">Delete Row</a>
-        <br><br>
+        <input type="button" id="add-row" value="Add Row"> <input type="button" id="del-row" value="Delete Row">
 
         <h5>123 International Student Mobility and Exchange</h5>
 
@@ -187,7 +122,6 @@ var j=1;
                     <input type="text" name='stdate'  class="form-control"/>
                 </td>
             </tr>
-            <tr id='add1'></tr>
             </tbody>
         </table>
         <a id="add_row_t2" class="btn btn-default pull-left">Add Row</a><a id='delete_row_t2' class="pull-right btn btn-default">Delete Row</a>
