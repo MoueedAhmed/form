@@ -49,7 +49,15 @@ $(document).ready(function () {
         deleteRow('table1');
     });
 
+    $("#add-row-t2").click(function () {
+            addRow('table2', '<tr>'+ '<td><input type="checkbox" name="chk"/></td>'+ '<td><input type="text" class="form-control"/></td>'+ '<td><input type="text" class="form-control"/></td>'+ '<td><input type="text" class="form-control"/></td>'+ '<td><input type="text" class="form-control"/></td>'+ '<td><input type="text" class="form-control"/></td>'+ '<td><input type="text" class="form-control"/></td>'+ '</tr>');
+        });
+
+        $("#del-row-t2").click(function () {
+            deleteRow('table2');
+        });
+
     $('#enter').click(function () {
-       loadValues('table1');
+       loadValues('table2');
     });
 });

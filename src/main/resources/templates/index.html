@@ -73,59 +73,35 @@
             </tr>
             </tbody>
         </table>
-        <input type="button" id="add-row" value="Add Row"> <input type="button" id="del-row" value="Delete Row">
+        <input type="button" id="add-row" value="Add Row"> <input type="button" id="del-row" value="Delete Row"><br><br>
 
         <h5>123 International Student Mobility and Exchange</h5>
 
         <table class="table table-bordered table-hover" id="table2">
             <thead>
             <tr >
-                <th class="text-center">
-                    University visited
-                </th>
-                <th class="text-center">
-                    Programme attended
-                </th>
-                <th class="text-center">
-                    City
-                </th>
-                <th class="text-center">
-                    Country
-                </th>
-                <th class="text-center">
-                    Duration of stay
-                </th>
-                <th class="text-center">
-                    Starting Date (MMM-YYYY)
-                    (eg. Aug-2019)
-                </th>
+                <th>Select</th>
+                <th class="text-center">University visited</th>
+                <th class="text-center">Programme attended</th>
+                <th class="text-center">City</th>
+                <th class="text-center">Country</th>
+                <th class="text-center">Duration of stay</th>
+                <th class="text-center">Starting Date (MMM-YYYY) eg. Aug-2019)</th>
             </tr>
             </thead>
             <tbody>
-            <tr id='add0'>
-                <td>
-                    <input type="text" name='universityVisited'  class="form-control"/>
-                </td>
-                <td>
-                    <input type="text" name='programmeAttended'  class="form-control"/>
-                </td>
-                <td>
-                    <input type="text" name='city'  class="form-control"/>
-                </td>
-                <td>
-                    <input type="text" name='countryt2'  class="form-control"/>
-                </td>
-                <td>
-                    <input type="text" name='duration'  class="form-control"/>
-                </td>
-                <td>
-                    <input type="text" name='stdate'  class="form-control"/>
-                </td>
+            <tr>
+                <td><input type='checkbox' name='chk' disabled/></td>
+                <td><input type="text" class="form-control"/></td>
+                <td><input type="text" class="form-control"/></td>
+                <td><input type="text" class="form-control"/></td>
+                <td><input type="text" class="form-control"/></td>
+                <td><input type="text" class="form-control"/></td>
+                <td><input type="text" class="form-control"/></td>
             </tr>
             </tbody>
         </table>
-        <a id="add_row_t2" class="btn btn-default pull-left">Add Row</a><a id='delete_row_t2' class="pull-right btn btn-default">Delete Row</a>
-        <br><br>
+        <input type="button" id="add-row-t2" value="Add Row"> <input type="button" id="del-row-t2" value="Delete Row"><br><br>
 
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
